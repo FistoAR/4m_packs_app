@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4M Packs</title>
+    <link rel="icon" href="./assets/images/images/4M_Packs_Logo.svg">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <!-- <div class="logo-icon">A</div>
+            <span>Frame 132131510</span> -->
+            <img src="./assets/images/images/4M_Packs_Logo.svg" alt="logo" class="w-[71%] ml-[50%]" />
+        </div>
+        <div class="export-dropdown flex">
+
+
+            <!-- <button class="edit-btn" onclick="editModel()">Edit</button> -->
+            <button class="edit-btn" onclick="editModel()">Customize your label</button>
+            <button class="export-btn" onclick="toggleDropdown()">Export</button>
+            <div id="exportDropdown" class="dropdown-content">
+                <a onclick="downloadGLB()">Download GLB</a>
+                <a onclick="downloadPDF()">Download PDF </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="categories">
+                <div class="category-title">CATEGORIES</div>
+                <div class="nav-buttons">
+                    <button class="nav-btn active" onclick="selectCategory(0)">
+                        <!-- <img src="./assets/images/images/round_container_red_button.svg"/> -->
+                        <div class="red-btn">
+                            <img src="./assets/images/images/icons/circle-icon.svg" />
+                            <p>ROUND <br />CONTAINERS</p>
+                        </div>
+                    </button>
+                    <button class="nav-btn" onclick="selectCategory(1)">
+                        <!-- <img src="./assets/images/images/tamper_evident_rectangular_red_button.svg"/> -->
+                        <div class="red-btn">
+                            <img src="./assets/images/images/icons/tamber-evident-icon.svg" />
+                            <p>TAMPER EVIDENT RECTANGULAR</p>
+                        </div>
+                    </button>
+                    <button class="nav-btn" onclick="selectCategory(2)">
+                        <!-- <img src="./assets/images/images/sipper_glass_red_button.svg"/> -->
+                        <div class="red-btn">
+                            <img src="./assets/images/images/icons/sipper-glass-icon.svg" />
+                            <p>SIPPER <br />GLASS</p>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="round-container-section">
+                    <div class="section-title" id="categoryTitle">ROUND CONTAINER</div>
+                    <div class="model-grid" id="modelGrid">
+                        <!-- Models will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- GLB Import Section -->
+                <!-- <div class="glb-import">
+                    <input type="file" id="glbImport" accept=".glb,.gltf" multiple onchange="handleGLBImport(event)">
+                    <label for="glbImport">Import GLB Models<br><small>Click to select .glb files</small></label>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="content-area">
+
+            <div class="model-display">
+
+                <div class="patterns-section">
+                    <div class="patterns-title">Default Patterns</div>
+                    <div class="pattern-grid">
+                        <div class="pattern-item pattern-1" onclick="selectPattern(0)"></div>
+                        <div class="pattern-item pattern-2" onclick="selectPattern(1)"></div>
+                        <div class="pattern-item pattern-3" onclick="selectPattern(2)"></div>
+                        <!-- <div class="pattern-item" onclick="selectPattern(3)"></div>
+                <div class="pattern-item" onclick="selectPattern(4)"></div>
+                <div class="pattern-item" onclick="selectPattern(5)"></div>
+                <div class="pattern-item" onclick="selectPattern(6)"></div>
+                <div class="pattern-item" onclick="selectPattern(7)"></div>
+                <div class="pattern-item" onclick="selectPattern(8)"></div> -->
+                    </div>
+                    <button class="edit-btn" onclick="">Upload your logo</button>
+                    <!-- Pattern Import Section -->
+                    <!-- <div class="pattern-import">
+                <input type="file" id="patternImport" accept="image/*" onchange="handlePatternImport(event)">
+                <label for="patternImport">Import Pattern<br><small>Click to select image</small></label>
+            </div> -->
+
+                    <!-- <button class="edit-btn" onclick="editModel()">Edit</button> -->
+                </div>
+                <div class="model-viewer">
+                    <div class="model-placeholder" id="modelPlaceholder">
+                        <model-viewer src="./assets/Final Models/1-50ml Hinged container/1.50ml.glb"
+                            alt="Container Model" auto-rotate camera-controls style="width: 100%; height: 100%;"
+                            id="viewer" disable-tap disable-pan>
+                        </model-viewer>
+                    </div>
+                </div>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" onclick="zoomIn()">+</button>
+                    <button class="zoom-btn" onclick="zoomOut()">-</button>
+
+                </div>
+                <div class="model-info">
+                    <div class="model-title" id="modelTitle">4MP-HC-50</div>
+                    <div class="model-capacity" id="modelCapacity">50ml Hinged Container</div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+  
+
+    <script src="./main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Model Viewer Script -->
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</body>
+
+</html>
