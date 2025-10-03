@@ -21,7 +21,7 @@ function clearCanvas() {
 // sessionStorage.setItem("model_type", "rectangle");
 const chosenModel = sessionStorage.getItem("model_type") ? sessionStorage.getItem("model_type") : 'round';
 
-setBackgroundImage(`/assets/images/images/default_${chosenModel}.png`, false);
+setBackgroundImage(`./assets/images/images/default_${chosenModel}.png`, false);
 // setBackgroundImage("/assets/images/images/default_round.png", false);
 const templateContainer = document.getElementById('template-container');
 createTemplates(chosenModel);
